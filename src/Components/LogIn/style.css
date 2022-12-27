@@ -1,0 +1,114 @@
+.logIn {
+  display: flex;
+}
+.logIn section {
+  width: 50%;
+}
+/* the first section */
+.logIn section:first-of-type {
+  padding: 68px 0 0 80px;
+}
+/* .logo svg path  {
+  fill: red;
+} */
+
+.logIn section:first-of-type {
+  color: #696f79;
+  font-style: italic;
+}
+.logIn section:first-of-type > div:last-of-type {
+  display: flex;
+  justify-content: space-between;
+}
+.logIn section:first-of-type > div:last-of-type div {
+  margin-top: 59px;
+}
+/*the seconed section */
+.logIn section:last-of-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 146px;
+}
+
+.logIn section:last-of-type h1 {
+  font-weight: 700;
+  font-size: 42px;
+}
+.logIn section:last-of-type p {
+  color: #8692a6;
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 12px;
+  margin-bottom: 40px;
+}
+/* the icons  */
+.icons {
+  width: 308px;
+  display: flex;
+  justify-content: space-between;
+}
+.icons div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65px;
+  height: 65px;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+}
+/* the spliter */
+.or {
+  position: relative;
+  font-weight: 400;
+  font-size: 12px;
+  margin-top: 40px;
+  margin-bottom: 28px;
+  color: #bababa;
+}
+.or::after,
+.or::before {
+  content: "";
+  position: absolute;
+  width: 172px;
+  border: 1px solid #f5f5f5;
+  top: 50%;
+  left: 35px;
+}
+.or::before {
+  left: calc(-172px + -30px);
+}
+
+form.logIn {
+  width: 426px;
+  display: flex;
+  flex-direction: column;
+}
+form.logIn label {
+  margin-bottom: 14px;
+  font-weight: 500;
+  color: #696f79;
+}
+form.logIn input {
+  font-size: 18px;
+  height: 64px;
+  margin-bottom: 24px;
+  padding: 23px 0 24px 30px;
+  border: 1px solid #8692a6;
+  border-radius: 6px;
+  position: relative;
+}
+form.logIn input:last-of-type {
+  margin-bottom: 52px;
+}
+.link {
+  margin-top: 27px;
+  color: #696f79;
+  font-weight: 500;
+  font-size: 16px;
+}
+.link span {
+  color: #1565D8;
+  cursor: pointer;
+}

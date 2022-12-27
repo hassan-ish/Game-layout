@@ -1,0 +1,8 @@
+.logIn button {
+  height: 64px;
+  padding: 23px;
+  background: #1565d8;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+}

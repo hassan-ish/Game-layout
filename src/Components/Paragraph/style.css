@@ -1,0 +1,13 @@
+.mark {
+  color: #bababa;
+  font-size: 96px;
+  font-weight: 700;
+  height: 55px;
+  font-family: "Gayathri", sans-serif;
+}
+.paragraph {
+  font-size: 20px;
+  line-height: 38px;
+  font-weight: 400;
+  width: 473px;
+}

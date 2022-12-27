@@ -1,0 +1,30 @@
+.signUp {
+  display: flex;
+}
+.signUp section {
+}
+.signUp section:first-of-type {
+  color: white;
+  width: 642px;  
+  padding: 62px 0 0 89px;
+  background-image: url(../../assets/controler.png);
+  height: 100vh;
+}
+.Name {
+  width: 473px;
+  margin-top: 59px;
+  display: flex;
+  justify-content: space-between;
+}
+.Name svg {
+  margin-top: 27px;
+}
+
+.signUp section:last-of-type {
+  padding: 82px 0 0 75px;
+}
+.back {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
