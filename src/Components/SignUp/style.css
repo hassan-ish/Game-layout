@@ -1,14 +1,19 @@
 .signUp {
   display: flex;
 }
-.signUp section {
-}
+
 .signUp section:first-of-type {
   color: white;
-  width: 642px;  
+  width: 642px;
   padding: 62px 0 0 89px;
   background-image: url(../../assets/controler.png);
-  height: 100vh;
+
+}
+.signUp .logo svg path  {
+  fill: #FFF;
+}
+.signUp .logo{
+  width: 106px;
 }
 .Name {
   width: 473px;
@@ -23,8 +28,57 @@
 .signUp section:last-of-type {
   padding: 82px 0 0 75px;
 }
+/* the second section */
 .back {
   display: flex;
   align-items: center;
   gap: 14px;
+  cursor: pointer;
+  width: fit-content;
+}
+.signUp section:last-of-type {
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  padding: 100px 0 0 60px;
+}
+.main h1 {
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.main p {
+  width: 415px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #8692A6;
+}
+
+.main form {
+  width: 426px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+}
+
+.main form label {
+  margin-bottom: 14px;
+  font-weight: 500;
+  color: #696f79;
+}
+.main form input {
+  font-size: 18px;
+  height: 64px;
+  margin-bottom: 24px;
+  padding: 23px 0 24px 30px;
+  border: 1px solid #8692a6;
+  border-radius: 6px;
+  position: relative;
+}
+.main form input[type = 'checkbox'] {
+  width: 18px;
+}
+.main form label[ htmlFor="checkbox" ]{
+
 }

@@ -23,7 +23,7 @@ export default class index extends Component {
           </div>
         </section>
         <section>
-          <div onClick={this.props.LogIn} className='Back'>
+          <div className="back" onClick={this.props.LogIn}>
             <svg
               width="10"
               height="18"
@@ -38,6 +38,23 @@ export default class index extends Component {
             </svg>
             back
           </div>
+          <div className="main">
+            <h1>Register Individual Account!</h1>
+            <p>
+              For the purpose of gamers regulation, your details are required.
+            </p>
+            <form>
+              <label htmlFor="email">Email address*</label>
+              <input type="email" id="email" />
+              <label htmlFor="password">Create password*</label>
+              <input type="password" id='password'/>
+              <label htmlFor="">Repeat password*</label>
+              <input type="password" id="Rpassword"/>
+              <input type="checkbox" name="checkbox" id="checkbox" />
+              <label htmlFor="checkbox">I agree to terms & conditions</label>
+            </form>
+          </div>
+
         </section>
       </div>
     );

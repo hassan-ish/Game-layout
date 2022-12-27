@@ -8,9 +8,6 @@
 .logIn section:first-of-type {
   padding: 68px 0 0 80px;
 }
-/* .logo svg path  {
-  fill: red;
-} */
 
 .logIn section:first-of-type {
   color: #696f79;
@@ -109,6 +106,6 @@ form.logIn input:last-of-type {
   font-size: 16px;
 }
 .link span {
-  color: #1565D8;
+  color: #1565d8;
   cursor: pointer;
 }
