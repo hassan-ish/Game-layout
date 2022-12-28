@@ -1,0 +1,21 @@
+/* the spliter */
+.or {
+  position: relative;
+  font-weight: 400;
+  font-size: 12px;
+  margin-top: 40px;
+  margin-bottom: 28px;
+  color: #bababa;
+}
+.or::after,
+.or::before {
+  content: "";
+  position: absolute;
+  width: 172px;
+  border: 1px solid #f5f5f5;
+  top: 50%;
+  left: 35px;
+}
+.or::before {
+  left: calc(-172px + -30px);
+}

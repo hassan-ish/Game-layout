@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import toyPic from "../../assets/toy.png";
-import Button from "../button";
+import Button from "../Button";
 import Logo from '../Logo'
+import Or from "../Or";
 import Paragraph from "../Paragraph";
 import "./style.css";
 export default class LogIn extends Component {
@@ -89,9 +90,7 @@ export default class LogIn extends Component {
               </svg>
             </div>
           </div>
-          <div className="or">
-            <span>Or</span>
-          </div>
+          <Or/>
           {/* the form */}
           <form className="logIn">
             <label htmlFor="userName">Your email</label>

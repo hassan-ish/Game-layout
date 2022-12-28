@@ -3,7 +3,7 @@ import './style.css'
 export default class Button extends Component {
   render() {
     return (
-      <button>{this.props.text}</button>
+      <button className='button'>{this.props.text}</button>
     )
   }
 }

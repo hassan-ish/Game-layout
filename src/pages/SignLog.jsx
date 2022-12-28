@@ -4,9 +4,11 @@ import SignUp from "../Components/SignUp";
 
 export default class SignLog extends Component {
   state = {
-    page: 'SignUp',
+    page: 'logIn',
     email: "",
     password: "",
+    repassword: "",
+    ischecked: false,
   };
   ReturnToLogIn = () => {
     this.setState({page:'logIn'});
