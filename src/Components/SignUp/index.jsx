@@ -58,8 +58,10 @@ export default class index extends Component {
               <input type="password" id="password" />
               <label htmlFor="">Repeat password*</label>
               <input type="password" id="Rpassword" />
-              <input type="checkbox" name="checkbox" id="checkbox" />
-              <label htmlFor="checkbox">I agree to terms & conditions</label>
+              <label htmlFor="checkbox">
+                <input type="checkbox" name="checkbox" id="checkbox" />I agree
+                to terms & conditions
+              </label>
               <Button text="Register Account" />
             </form>
             <Or />
