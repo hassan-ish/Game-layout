@@ -1,0 +1,22 @@
+form.logIn {
+  width: 426px;
+  display: flex;
+  flex-direction: column;
+}
+form.logIn label {
+  margin-bottom: 14px;
+  font-weight: 500;
+  color: #696f79;
+}
+form.logIn input {
+  font-size: 18px;
+  height: 64px;
+  margin-bottom: 24px;
+  padding: 23px 0 24px 30px;
+  border: 1px solid #8692a6;
+  border-radius: 6px;
+  position: relative;
+}
+form.logIn input:last-of-type {
+  margin-bottom: 52px;
+}
