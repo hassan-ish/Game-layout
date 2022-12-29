@@ -3,14 +3,36 @@ import Logo from "../Logo";
 import Paragraph from "../Paragraph";
 import "./style.css";
 import Button from "../Button";
-import * as yup from "yup";
 import Or from "../Or";
+import * as yup from "yup";
 
 export default class index extends Component {
   schema = yup.object().shape({
     email: yup.string().email().min(6).max(16).required(),
     password: yup.string().min(8).required(),
+    repassword: yup
+      .string()
+      .oneOf([yup.ref("password")], null)
+      .required(),
+      ischecked: yup.boolean().oneOf([true],'must be checked').required(),
   });
+
+  handelSubmit = (e) => {
+    e.preventDefault();
+    this.schema
+      .validate({
+        email: this.props.email,
+        password: this.props.password,
+        repassword: this.props.repassword,
+        ischecked: this.props.ischecked,
+      },{abortEarly: false})
+      .then(() => {
+        console.log("valid");
+      })
+      .catch((e) => {
+        console.log(e.errors);
+      });
+  };
   render() {
     return (
       <div className="signUp">
@@ -51,7 +73,8 @@ export default class index extends Component {
             <p>
               For the purpose of gamers regulation, your details are required.
             </p>
-            <form>
+            {/* start form */}
+            <form onSubmit={this.handelSubmit}>
               <label htmlFor="email">Email address*</label>
               <input
                 type="email"

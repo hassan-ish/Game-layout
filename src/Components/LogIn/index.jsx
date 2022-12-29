@@ -5,7 +5,28 @@ import Logo from '../Logo'
 import Or from "../Or";
 import Paragraph from "../Paragraph";
 import "./style.css";
+import * as yup from "yup";
 export default class LogIn extends Component {
+  
+  schema = yup.object().shape({
+    email: yup.string().email().min(6).max(16).required(),
+    password: yup.string().min(8).required(),
+  });
+
+  handelSubmit = (e) => { 
+    e.preventDefault();
+    this.schema
+      .validate({
+        email: this.props.email,
+        password: this.props.password,
+      })
+      .then(() => {
+        console.log("valid");
+      })
+      .catch((e) => {
+        console.log(e.errors);
+      });
+  };
   render() {
     return (
       <div className="logIn">
@@ -92,7 +113,7 @@ export default class LogIn extends Component {
           </div>
           <Or/>
           {/* the form */}
-          <form className="logIn">
+          <form className="logIn" onSubmit={this.handelSubmit}>
             <label htmlFor="userName">Your email</label>
             <input
               type="email"
