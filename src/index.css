@@ -11,3 +11,151 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* the login page */
+.logIn {
+  display: flex;
+}
+.logIn section {
+  width: 50%;
+}
+/* the first section */
+.logIn section:first-of-type {
+  padding: 68px 0 0 80px;
+}
+
+.logIn section:first-of-type {
+  color: #696f79;
+  font-style: italic;
+}
+.logIn section:first-of-type > div:last-of-type {
+  display: flex;
+  justify-content: space-between;
+}
+.logIn section:first-of-type > div:last-of-type div {
+  margin-top: 59px;
+}
+/*the seconed section */
+.logIn section:last-of-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 146px;
+}
+
+.logIn section:last-of-type h1 {
+  font-weight: 700;
+  font-size: 42px;
+}
+.logIn section:last-of-type p {
+  color: #8692a6;
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 12px;
+  margin-bottom: 40px;
+}
+/* the icons  */
+.icons {
+  width: 308px;
+  display: flex;
+  justify-content: space-between;
+}
+.icons div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65px;
+  height: 65px;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+}
+
+.link {
+  margin-top: 27px;
+  color: #696f79;
+  font-weight: 500;
+  font-size: 16px;
+}
+.link span a { /*the Link compiles to a || like  htmlFor === for */
+  color: #1565d8;
+  text-decoration: none;
+}
+/* the signUp page */
+.signUp {
+  display: flex;
+}
+
+.signUp section:first-of-type {
+  color: white;
+  width: 642px;
+  padding: 62px 0 0 89px;
+  background-image: url(./assets/controler.png);
+}
+.signUp .logo svg path {
+  fill: #fff;
+}
+.signUp .logo {
+  width: 106px;
+}
+.Name {
+  width: 473px;
+  margin-top: 59px;
+  display: flex;
+  justify-content: space-between;
+}
+.Name svg {
+  margin-top: 27px;
+}
+
+.signUp section:last-of-type {
+  padding: 82px 0 0 75px;
+}
+/* the second section */
+/* the" < back" button  */
+.back a  {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  width: fit-content;
+  text-decoration: none;
+  color: #8692a6;
+}
+.signUp section:last-of-type {
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  padding: 100px 0 0 60px;
+}
+.main h1 {
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.main p {
+  width: 415px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #8692a6;
+}
+
+
+.main form + div {
+  margin-left: 210px;
+  margin-top: 10px;
+}
+.google {
+  width: 426px;
+  height: 64px;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 37px;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
