@@ -9,7 +9,7 @@ import * as yup from "yup";
 export default class index extends Component {
   schema = yup.object().shape({
     email: yup.string().email().min(6).max(16).required(),
-    password: yup.string().min(8).required(),
+    password: yup.string().min(8).matches(/[a-z]|[A-Z]|[0-9]/).required(),
     repassword: yup
       .string()
       .oneOf([yup.ref("password")], null)
