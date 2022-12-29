@@ -53,14 +53,35 @@ export default class index extends Component {
             </p>
             <form>
               <label htmlFor="email">Email address*</label>
-              <input type="email" id="email" />
+              <input
+                type="email"
+                id="email"
+                onChange={this.props.handelChange}
+                value={this.props.email}
+              />
               <label htmlFor="password">Create password*</label>
-              <input type="password" id="password" />
+              <input
+                type="password"
+                id="password"
+                onChange={this.props.handelChange}
+                value={this.props.password}
+              />
               <label htmlFor="">Repeat password*</label>
-              <input type="password" id="Rpassword" />
+              <input
+                type="password"
+                id="repassword"
+                onChange={this.props.handelChange}
+                value={this.props.repassword}
+              />
               <label htmlFor="checkbox">
-                <input type="checkbox" name="checkbox" id="checkbox" />I agree
-                to terms & conditions
+                <input
+                  type="checkbox"
+                  name="checkbox"
+                  id="checkbox"
+                  onChange={this.props.handelCheckbox}
+                  checked={this.props.ischecked}
+                />
+                I agree to terms & conditions
               </label>
               <Button text="Register Account" />
             </form>
