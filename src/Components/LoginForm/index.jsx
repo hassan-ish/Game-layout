@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import * as yup from "yup";
+
 import Button from "../Button";
+
 import "./style.css";
 export default class LoginForm extends Component {
   schema = yup.object().shape({
-    email: yup.string().email().min(6).max(16).required(),
-    password: yup.string().min(8).required(),
+    email: yup.string().email().required(),
+    password: yup
+      .string()
+      .min(8)
+      .required(),
   });
 
-  handelSubmit = (e) => { 
+  handelSubmit = (e) => {
     e.preventDefault();
     this.schema
       .validate({

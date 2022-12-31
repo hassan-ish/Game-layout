@@ -1,11 +1,11 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import toyPic from "../assets/toy.png";
 import Logo from "../Components/Logo";
 import Or from "../Components/Or";
 import Paragraph from "../Components/Paragraph";
-
 import LoginForm from "../Components/LoginForm";
-import { Link } from "react-router-dom";
 export default class LogIn extends Component {
   state = {
     email: "",

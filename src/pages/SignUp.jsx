@@ -1,10 +1,10 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import Logo from "../Components/Logo";
 import Paragraph from "../Components/Paragraph";
 import Or from "../Components/Or";
-
 import SignupForm from "../Components/SignupForm";
-import { Link } from "react-router-dom";
 
 export default class SignUp extends Component {
   state = {
