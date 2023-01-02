@@ -18,7 +18,7 @@ export default class SignUp extends Component {
     let { value, id } = e.target;
     this.setState({ [id]: value });
   };
-  onCheackBoXChange = () => {
+  onCheackBoxChange = () => {
     this.setState((prevState) => ({
       ischecked: !prevState.ischecked,
     }));
@@ -27,6 +27,7 @@ export default class SignUp extends Component {
     return (
       <div className="signUp">
         <section>
+          <div className="filter"></div>
           <Logo />
           <Paragraph />
           <div className="Name">
@@ -68,7 +69,7 @@ export default class SignUp extends Component {
             {/* start form */}
             <SignupForm
               handelChange={this.onChange}
-              handelCheckbox={this.onCheackBoXChange}
+              handelCheckbox={this.onCheackBoxChange}
               {...this.state}
             />
             <Or />
