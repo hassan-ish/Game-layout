@@ -1,15 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Gayathri:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Gayathri:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap");
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+svg {
+  cursor: pointer;
 }
 /* the login page */
 .logIn {
@@ -76,7 +79,7 @@ body {
   font-weight: 500;
   font-size: 16px;
 }
-.link span a { /*the Link compiles to a || like  htmlFor === for */
+.link span a {
   color: #1565d8;
   text-decoration: none;
 }
@@ -101,8 +104,8 @@ body {
   width: 100%;
   height: 100%;
   background-color: #1565d8;
-  opacity: 0.9; 
-  margin: -62px 0 0 -89px; ;
+  opacity: 0.9;
+  margin: -62px 0 0 -89px;
   z-index: 1;
 }
 .signUp .logo svg path {
@@ -126,7 +129,7 @@ body {
 }
 /* the second section */
 /* the" < back" button  */
-.back a  {
+.back a {
   display: flex;
   align-items: center;
   gap: 14px;
@@ -173,4 +176,98 @@ body {
   justify-content: space-around;
   align-items: center;
   cursor: pointer;
+}
+/* ////////////////// */
+/* start the Home page styling */
+main.home {
+  background-color: #f9f9f9;
+  display: flex;
+  padding-top: 25px;
+  overflow: hidden;
+}
+.home section:first-of-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 113px;
+  height: 100vh;
+  padding-bottom: 55px;
+}
+.home section:first-of-type nav {
+  display: flex;
+  flex-direction: column;
+  row-gap: 27px;
+}
+/* the theme */
+.home section:first-of-type .theme {
+  width: 50px;
+  height: 121px;
+  background-color: #c1c1c1;
+  border-radius: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+/* the line  */
+hr {
+  width: 5px;
+  height: 92vh;
+  background: #ffffff;
+  box-shadow: inset 2px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 38px;
+}
+
+/* the Main section */
+.home section:last-of-type{
+  overflow: hidden;
+}
+/* the pfp  */
+.home section:last-of-type > div:first-of-type {
+  font-weight: 400;
+  font-size: 25px;
+  text-align: end;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  column-gap: 22px;
+  padding-right: 40px;
+}
+.pfp img {
+  height: 60px;
+}
+/* the New games section */
+.home .content {
+  padding-left: 45px;
+}
+.title {
+  font-size: 25px;
+  font-weight: 800;
+}
+.home .games-section > div {
+  display: flex;
+  column-gap: 30px;
+  overflow-x: scroll;
+  margin: 33px 0;
+  font-weight: 800;
+}
+.home .games-section > div::-webkit-scrollbar{
+  display: none;
+}
+/* the last bottom section */
+.bottomSection {
+  display: flex;
+  column-gap: 90px;
+}
+/* the Last played */
+.lastPlayed > div {
+  margin-top: 30px;
+}
+.lastPlayed .LPgame:first-child img {
+  height: 82px;
+}
+/* frinds */
+.friends >div {
+  margin-top: 30px;
 }
