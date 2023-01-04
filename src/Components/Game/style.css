@@ -1,0 +1,22 @@
+.game {
+  position: relative;
+}
+.game img {
+  border-radius: 60px;
+  height: 250px;
+}
+/* the text inside the img */
+.game div {
+  width: 65%;
+  position: absolute;
+  color: white;
+  bottom: 25px;
+}
+/* the text alignment */
+.right {
+  right: 18px;
+  text-align: end;
+}
+.left {
+  left: 18px;
+}
