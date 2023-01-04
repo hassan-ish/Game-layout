@@ -1,52 +1,51 @@
-import React, { Component } from "react";
+import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 
 import Button from "../Button";
 
 import "./style.css";
-export default class LoginForm extends Component {
-  schema = yup.object().shape({
+export default function LoginForm(props) {
+  const navigate = useNavigate();
+  const schema = yup.object().shape({
     email: yup.string().email().required(),
-    password: yup
-      .string()
-      .required(),
+    password: yup.string().required(),
   });
 
-  handelSubmit = (e) => {
+  const handelSubmit = (e) => {
     e.preventDefault();
-    this.schema
+    schema
       .validate({
-        email: this.props.email,
-        password: this.props.password,
+        email: props.email,
+        password: props.password,
       })
       .then(() => {
         console.log("valid");
+        navigate("/home");
       })
       .catch((e) => {
         console.log(e.errors);
       });
   };
-  render() {
-    return (
-      <form className="logIn" onSubmit={this.handelSubmit}>
-        <label htmlFor="userName">Your email</label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Write your email"
-          value={this.props.email}
-          onChange={this.props.handelChange}
-        />
-        <label htmlFor="password">Enter your password</label>
-        <input
-          type="password"
-          id="password"
-          placeholder="•••••••••"
-          value={this.props.password}
-          onChange={this.props.handelChange}
-        />
-        <Button text="Login" />
-      </form>
-    );
-  }
+
+  return (
+    <form className="logIn" onSubmit={handelSubmit}>
+      <label htmlFor="userName">Your email</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="Write your email"
+        value={props.email}
+        onChange={props.handelChange}
+      />
+      <label htmlFor="password">Enter your password</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="•••••••••"
+        value={props.password}
+        onChange={props.handelChange}
+      />
+      <Button text="Login" />
+    </form>
+  );
 }
