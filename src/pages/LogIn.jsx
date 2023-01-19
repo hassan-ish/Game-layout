@@ -10,10 +10,18 @@ export default class LogIn extends Component {
   state = {
     email: "",
     password: "",
+    errors: [],
   };
   onChange = (e) => {
     let { value, id } = e.target;
     this.setState({ [id]: value });
+  };
+  handelErrors = (error) => {
+    if (error.errors) {
+      this.setState({ errors: error.errors });
+    } else {
+      this.setState({ errors: [error.message] });
+    }
   };
   render() {
     return (
@@ -100,10 +108,16 @@ export default class LogIn extends Component {
             </div>
           </div>
           <Or />
-          <LoginForm handelChange={this.onChange} {...this.state} />
+          <LoginForm
+            handelChange={this.onChange}
+            handelErrors={this.handelErrors}
+            {...this.state}
+          />
           <div className="link">
             Don’t have an account?
-            <span><Link to={'/signup'}> Register</Link></span>
+            <span>
+              <Link to={"/signup"}> Register</Link>
+            </span>
           </div>
         </section>
       </div>

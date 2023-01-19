@@ -8,11 +8,11 @@ import SignupForm from "../Components/SignupForm";
 
 export default class SignUp extends Component {
   state = {
-    page: "logIn",
     email: "",
     password: "",
     repassword: "",
     ischecked: false,
+    errors:[],
   };
   onChange = (e) => {
     let { value, id } = e.target;
@@ -23,6 +23,13 @@ export default class SignUp extends Component {
       ischecked: !prevState.ischecked,
     }));
   };
+  handelErrors= (error)=>{
+    if(error.errors){
+      this.setState({errors : error.errors})
+    }else{
+      this.setState({errors:[error.message]})
+    }
+  }
   render() {
     return (
       <div className="signUp">
@@ -45,7 +52,7 @@ export default class SignUp extends Component {
         </section>
         <section>
           <div className="back">
-            <Link to={"/"}>
+            <Link to={"/login"}>
               <svg
                 width="10"
                 height="18"
@@ -70,6 +77,7 @@ export default class SignUp extends Component {
             <SignupForm
               handelChange={this.onChange}
               handelCheckbox={this.onCheackBoxChange}
+              handelErrors={this.handelErrors}
               {...this.state}
             />
             <Or />
