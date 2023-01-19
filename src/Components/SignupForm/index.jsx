@@ -6,20 +6,23 @@ import "./style.css";
 export default function SignupForm(props) {
   const navigate = useNavigate();
   const schema = yup.object().shape({
-    email: yup.string().email().required(),
+    email: yup.string().email().required("Please Enter your Email"),
     password: yup
       .string()
       .min(8)
       .matches(
-        /[a-z]|[A-Z]|[0-9]/,
-        "password must have a lower,upper case and a number "
+        "^(?=.*[A-Za-z])(?=.*d)(?=.*[@$!%*#?&])[A-Za-zd@$!%*#?&]{8,}$",
+        "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
       )
-      .required(),
+      .required("Please Enter your password"),
     repassword: yup
       .string()
-      .oneOf([yup.ref("password")], "the password should be matching")
+      .oneOf([yup.ref("password")])
+      .required("Passwords must match"),
+    ischecked: yup
+      .boolean()
+      .oneOf([true], "You should agree to terms & conditions")
       .required(),
-    ischecked: yup.boolean().oneOf([true], "must be checked").required(),
   });
 
   const handelSubmit = (e) => {
@@ -38,8 +41,8 @@ export default function SignupForm(props) {
         console.log("valid");
         navigate("/home");
       })
-      .catch((e) => {
-        console.log(e.errors);
+      .catch((error) => {
+        props.handelErrors(error)
       });
   };
   return (
@@ -75,6 +78,7 @@ export default function SignupForm(props) {
         />
         I agree to terms & conditions
       </label>
+      <div className="errors">{props.errors.map((ele,index) => <div key={index}>{ele}</div>)}</div>
       <Button text="Register Account" />
     </form>
   );
