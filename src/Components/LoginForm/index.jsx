@@ -7,8 +7,8 @@ import "./style.css";
 export default function LoginForm(props) {
   const navigate = useNavigate();
   const schema = yup.object().shape({
-    email: yup.string().email().required(),
-    password: yup.string().required(),
+    email: yup.string().email().required("Please Enter your Email"),
+    password: yup.string().required("Please Enter your password"),
   });
 
   const handelSubmit = (e) => {
@@ -19,11 +19,11 @@ export default function LoginForm(props) {
         password: props.password,
       })
       .then(() => {
-        console.log("valid");
+      
         navigate("/home");
       })
-      .catch((e) => {
-        console.log(e.errors);
+      .catch((error) => {
+        props.handelErrors(error)
       });
   };
 
@@ -45,6 +45,7 @@ export default function LoginForm(props) {
         value={props.password}
         onChange={props.handelChange}
       />
+      <div className="errors">{props.errors}</div>
       <Button text="Login" />
     </form>
   );
