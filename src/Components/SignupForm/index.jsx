@@ -1,5 +1,5 @@
 import * as yup from "yup";
-import Button from "../Button";
+import Button from "../MyButton";
 import { Navigate } from "react-router-dom";
 
 import "./style.css";

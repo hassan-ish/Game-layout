@@ -2,7 +2,7 @@ import { Component } from "react";
 import { Navigate } from "react-router-dom";
 import * as yup from "yup";
 
-import Button from "../Button";
+import Button from "../MyButton";
 
 import "./style.css";
 export default class ComponentLoginForm extends Component {
