@@ -1,11 +1,11 @@
 import * as yup from "yup";
 import Button from "../Button";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 import "./style.css";
-export default function SignupForm(props) {
-  const navigate = useNavigate();
-  const schema = yup.object().shape({
+import { Component } from "react";
+export default class SignupForm extends Component {
+  schema = yup.object().shape({
     email: yup.string().email().required("Please Enter your Email"),
     password: yup
       .string()
@@ -25,61 +25,67 @@ export default function SignupForm(props) {
       .required(),
   });
 
-  const handelSubmit = (e) => {
+  handelSubmit = (e) => {
     e.preventDefault();
-    schema
+    this.schema
       .validate(
         {
-          email: props.email,
-          password: props.password,
-          repassword: props.repassword,
-          ischecked: props.ischecked,
+          email: this.props.email,
+          password: this.props.password,
+          repassword: this.props.repassword,
+          ischecked: this.props.ischecked,
         },
         { abortEarly: false }
       )
       .then(() => {
         console.log("valid");
-        navigate("/home");
+        Navigate("/home");
       })
       .catch((error) => {
-        props.handelErrors(error)
+        this.props.handelErrors(error);
       });
   };
-  return (
-    <form onSubmit={handelSubmit}>
-      <label htmlFor="email">Email address*</label>
-      <input
-        type="email"
-        id="email"
-        onChange={props.handelChange}
-        value={props.email}
-      />
-      <label htmlFor="password">Create password*</label>
-      <input
-        type="password"
-        id="password"
-        onChange={props.handelChange}
-        value={props.password}
-      />
-      <label htmlFor="">Repeat password*</label>
-      <input
-        type="password"
-        id="repassword"
-        onChange={props.handelChange}
-        value={props.repassword}
-      />
-      <label htmlFor="checkbox">
+  render() {
+    return (
+      <form onSubmit={this.handelSubmit}>
+        <label htmlFor="email">Email address*</label>
         <input
-          type="checkbox"
-          name="checkbox"
-          id="checkbox"
-          onChange={props.handelCheckbox}
-          checked={props.ischecked}
+          type="email"
+          id="email"
+          onChange={this.props.handelChange}
+          value={this.props.email}
         />
-        I agree to terms & conditions
-      </label>
-      <div className="errors">{props.errors.map((ele,index) => <div key={index}>{ele}</div>)}</div>
-      <Button text="Register Account" />
-    </form>
-  );
+        <label htmlFor="password">Create password*</label>
+        <input
+          type="password"
+          id="password"
+          onChange={this.props.handelChange}
+          value={this.props.password}
+        />
+        <label htmlFor="">Repeat password*</label>
+        <input
+          type="password"
+          id="repassword"
+          onChange={this.props.handelChange}
+          value={this.props.repassword}
+        />
+        <label htmlFor="checkbox">
+          <input
+            type="checkbox"
+            name="checkbox"
+            id="checkbox"
+            onChange={this.props.handelCheckbox}
+            checked={this.props.ischecked}
+          />
+          I agree to terms & conditions
+        </label>
+        <div className="errors">
+          {this.props.errors.map((ele, index) => (
+            <div key={index}>{ele}</div>
+          ))}
+        </div>
+        <Button text="Register Account" />
+      </form>
+    );
+  }
 }
