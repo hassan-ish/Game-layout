@@ -4,24 +4,26 @@ import { Navigate } from "react-router-dom";
 
 import "./style.css";
 import { Component } from "react";
+
+const regularExpression = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/;
 export default class SignupForm extends Component {
+  state = {
+    LogedIn: false,
+  };
   schema = yup.object().shape({
     email: yup.string().email().required("Please Enter your Email"),
     password: yup
       .string()
-      .min(8)
-      .matches(
-        "^(?=.*[A-Za-z])(?=.*d)(?=.*[@$!%*#?&])[A-Za-zd@$!%*#?&]{8,}$",
-        "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
-      )
+      .min(6)
+      .matches(regularExpression, "your Password is week")
       .required("Please Enter your password"),
     repassword: yup
       .string()
-      .oneOf([yup.ref("password")])
-      .required("Passwords must match"),
+      .oneOf([yup.ref("password")], "Passwords must match")
+      .required("Please Repeat your password"),
     ischecked: yup
       .boolean()
-      .oneOf([true], "You should agree to terms & conditions")
+      .oneOf([true], "You should agree to our terms & conditions")
       .required(),
   });
 
@@ -38,8 +40,7 @@ export default class SignupForm extends Component {
         { abortEarly: false }
       )
       .then(() => {
-        console.log("valid");
-        Navigate("/home");
+        this.setState({ LogedIn: true });
       })
       .catch((error) => {
         this.props.handelErrors(error);
@@ -85,6 +86,7 @@ export default class SignupForm extends Component {
           ))}
         </div>
         <Button text="Register Account" />
+        {this.state.LogedIn && <Navigate to="/home" />}
       </form>
     );
   }

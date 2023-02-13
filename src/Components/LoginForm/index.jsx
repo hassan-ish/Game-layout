@@ -6,6 +6,9 @@ import Button from "../MyButton";
 
 import "./style.css";
 export default class ComponentLoginForm extends Component {
+  state = {
+    LogedIn: false,
+  };
   schema = yup.object().shape({
     email: yup.string().email().required("Please Enter your Email"),
     password: yup.string().required("Please Enter your password"),
@@ -19,7 +22,7 @@ export default class ComponentLoginForm extends Component {
         password: this.props.password,
       })
       .then(() => {
-        Navigate("/home");
+        this.setState({ LogedIn: true });
       })
       .catch((error) => {
         this.props.handelErrors(error);
@@ -46,6 +49,7 @@ export default class ComponentLoginForm extends Component {
         />
         <div className="errors">{this.props.errors}</div>
         <Button text="Login" />
+        {this.state.LogedIn && <Navigate to="/home" />}
       </form>
     );
   }
